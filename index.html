@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="main.css" rel="stylesheet">
+    <title>Calendar - My Study Life</title>
+</head>
+
+<body>
+    <div id="navigator">
+        <!--        <h3 style="margin-bottom: 6px">SECTIONS</h3>-->
+        <table>
+            <tr>
+                <td><a href="dashboard.html">Dashboard</a></td>
+                <td><a href="calendar.html">Calendar</a></td>
+                <td><a href="tasks.html">Tasks</a></td>
+                <td><a href="exams.html">Exams</a></td>
+                <td><a href="schedule.html">Schedule</a></td>
+                <td><a href="search.html">Search</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="heading">
+        <h2 style="margin-bottom: 5px">
+            <script>
+                var title = document.getElementsByTagName("title")[0].innerHTML.replace(" - My Study Life", "");
+                document.write(title);
+            </script>
+        </h2>
+        <responsive-span text="currentDate | momentFormat:'LLD'" text-abbr="currentDate | momentFormat:'dddd, MMM D'" text-shortest="currentDate | momentFormat:'ddd, MMM D'"><span>Sunday, March 3</span></responsive-span>
+    </div>
+
+    <div id="table-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="border: none"></th>
+                    <th>Lunedì</th>
+                    <th>Martedì</th>
+                    <th>Mercoledì</th>
+                    <th>Giovedì</th>
+                    <th>Venerdì</th>
+                    <th>Sabato</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">08:10-09:10</td>
+                    <td class="mat-inglese">Inglese</td>
+                    <td class="mat-motoria">Motoria</td>
+                    <td class="mat-matematica">Matematica</td>
+                    <td class="mat-matematica">Matematica</td>
+                    <td class="mat-italiano">Italiano</td>
+                    <td class="mat-fisica">Fisica</td>
+                </tr>
+                <tr>
+                    <td class="time">09:10-10:05</td>
+                    <td class="mat-filosofia">Filosofia</td>
+                    <td class="mat-motoria">Motoria</td>
+                    <td class="mat-fisica">Fisica</td>
+                    <td class="mat-inglese">Inglese</td>
+                    <td class="mat-italiano">Italiano</td>
+                    <td class="mat-italiano">Italiano</td>
+                </tr>
+                <tr>
+                    <td class="time">10:05-11:00</td>
+                    <td class="mat-informatica">Informatica</td>
+                    <td class="mat-italiano">Italiano</td>
+                    <td class="mat-informatica">Informatica</td>
+                    <td class="mat-storia">Storia</td>
+                    <td class="mat-inglese">Inglese</td>
+                    <td>PAUSA</td>
+                </tr>
+                <tr>
+                    <td class="time">11:15-12:10</td>
+                    <td class="mat-matematica">Matematica</td>
+                    <td class="mat-scienze">Scienze</td>
+                    <td class="mat-storia">Storia</td>
+                    <td class="mat-scienze">Scienze</td>
+                    <td class="mat-arte">Arte</td>
+                    <td class="mat-arte">Arte</td>
+                </tr>
+                <tr>
+                    <td class="time">12:10-13:10</td>
+                    <td class="mat-matematica">Matematica</td>
+                    <td class="mat-scienze">Scienze</td>
+                    <td class="mat-scienze">Scienze</td>
+                    <td class="mat-scienze">Scienze</td>
+                    <td class="mat-filosofia">Filosofia</td>
+                    <td class="no-border"></td>
+                </tr>
+                <tr>
+                    <td class="time">13:10-14:05</td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="mat-fisica">Fisica</td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="footer">
+        <span float="right">
+            &copy<script>
+                var year = new Date().getFullYear();
+                document.write(year);
+            </script>
+        </span>
+        <span></span>
+    </div>
+
+</body>
+</html>
