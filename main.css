@@ -1,0 +1,131 @@
+body {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    margin: 20px 20px 0px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7f7f7f;
+}
+
+::-webkit-scrollbar-thumb:hover {}
+
+#navigator {
+    font-weight: bold;
+    background: rgb(240, 240, 240);
+    padding: 5px 20px 5px;
+    margin: -20px;
+}
+
+td {
+    border: solid 1px black;
+    padding: 4px;
+    padding-left: 7px;
+}
+
+#navigator td {
+    border: none;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+th {
+    border: solid 2px black;
+    padding: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.no-border {
+    border: none;
+}
+
+.time {
+    text-align: center;
+}
+
+.mat-arte {
+    background-color: #674172;
+}
+
+.mat-filosofia {
+    background-color: #e3be0d;
+}
+
+.mat-fisica {
+    background-color: #1098a5;
+}
+
+.mat-informatica {
+    background-color: #95a5a6;
+}
+
+.mat-inglese {
+    background-color: #c0392b;
+}
+
+.mat-italiano {
+    background-color: #38acfa;
+}
+
+.mat-matematica {
+    background-color: #fd5645;
+}
+
+.mat-motoria {
+    background-color: #3a539b;
+}
+
+.mat-scienze {
+    background-color: #049372;
+}
+
+.mat-storia {
+    background-color: #f89406;
+}
+
+#heading {
+    margin: 0px 20px 20px 0px;
+    padding: 20px 20px 20px 0px;
+    align-items: center;
+}
+
+#table-content {
+    font-weight: 600;
+}
+
+div#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: rgb(240, 240, 240);
+    text-align: center;
+    margin-left: -20px;
+}
