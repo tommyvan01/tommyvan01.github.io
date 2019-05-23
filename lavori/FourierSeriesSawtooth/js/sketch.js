@@ -5,9 +5,9 @@ let slider; // slider per numero di onde
 
 function setup(){
     createCanvas(800, 400);
-    frameRate(30);
+    frameRate(60);
     // slider per numero di onde da aggiungere
-    slider = createSlider(1, 20, 10); // min, max, start
+    slider = createSlider(1, 400, 30); // min, max, start
     slider.position(20, 40);
 }
 
@@ -16,7 +16,7 @@ function draw() {
     // slider
     fill(255);
     textSize(20);
-    text("Numero di onde: " + slider.value(), 20, 30);
+    text("# of waves: " + slider.value(), 20, 30);
     translate(200, 200);
 
     let radius = 75;
@@ -38,7 +38,7 @@ function draw() {
         stroke(255, 50);
         ellipse(x, y, radius / n *2);
         x += radius * s / n * cos(n * time);
-        y += radius * s / n * sin(-1 * n * time);
+        y += radius * s / n * sin(-1* n * time);
         stroke(255, 360);
         line(px, py, x, y);
         px = x;
@@ -50,7 +50,9 @@ function draw() {
     
     noFill();
     translate(200, 0);
+    stroke(255, 0, 0, 360);
     line(x - 200, y, 0, wave[0]);
+    stroke(255, 360);
     beginShape();
     for (let i=0; i<wave.length; i++){
         vertex(i, wave[i]);
