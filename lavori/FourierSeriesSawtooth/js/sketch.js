@@ -37,8 +37,8 @@ function draw() {
         noFill();
         stroke(255, 50);
         ellipse(x, y, radius / n *2);
-        x += radius / (s * n) * cos(n * time);
-        y += radius / (s * n) * sin(n * time);
+        x += radius * s / n * cos(n * time);
+        y += radius * s / n * sin(-1 * n * time);
         stroke(255, 360);
         line(px, py, x, y);
         px = x;
