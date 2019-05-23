@@ -7,7 +7,7 @@ function setup(){
     createCanvas(800, 400);
     frameRate(30);
     // slider per numero di onde da aggiungere
-    slider = createSlider(1, 20, 7); // min, max, start
+    slider = createSlider(1, 400, 30); // min, max, start
     slider.position(20, 40);
 }
 
@@ -17,7 +17,7 @@ function draw() {
     fill(255);
     textSize(20);
     strokeWeight(1);
-    text("Numero di onde: " + slider.value(), 20, 30);
+    text("# of waves: " + slider.value(), 20, 30);
     translate(200, 200);
 
     let radius = 100;
@@ -57,7 +57,10 @@ function draw() {
     }
     endShape();
 
-    time += 0.04;
+    time += 0.03;
+    if (time > TWO_PI){
+        time = 0;
+    }
     
     // rimuovo l'ultimo punto della lista per ottimizzazione di memoria
     if(wave.length > 500){
