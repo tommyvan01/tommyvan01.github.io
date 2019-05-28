@@ -2,16 +2,21 @@
 <html>
 <head>
     <link href="../main.css" rel="stylesheet">
-    <title>Tommy Vanini - Fourier Triangle Wave</title>
+    <link rel="icon" type="image/png" href="../images/icona.png">
+    <title>TV - Triangle Wave</title>
     <script src="../p5libraries/p5.js"></script>
     <script src="../p5libraries/p5.dom.js"></script>
-    <script src="../p5libraries/p5.dom.min.js"></script>
 </head>
 <body>
-    <a href="../index.html">Back</a>
+    <a href="../index.html" class="back">Back</a>
     <div class="center">
-        <h1>Fourier's triangle wave</h1>
-        <script src="../lavori/FourierSeriesTriangleWave/js/sketch.js"></script>
+        <h1>The Triangle Wave</h1>
+        <div class="content-description"><span>Uses the following formula<br></span><img
+                src="https://latex.codecogs.com/gif.latex?\sum_{k=0}^{N}\frac{sin((2k&plus;1)\cdot&space;\theta)}{(-1)^{k}(2k&plus;1)^{2}}"><br>to
+            calculate the radius and the period of each circle</div>
+        <script src="../js/FourierSeriesTriangleWave/sketch.js"></script>
+        <div id="slider-wrapper"></div>
+        <div id="canvas-wrapper"></div>
     </div>
 </body>
 </html>

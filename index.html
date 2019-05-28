@@ -3,18 +3,26 @@
 
 <head>
     <link href="main.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icona.png">
+    <script src="p5libraries/p5.js"></script>
+    <script src="p5libraries/p5.dom.js"></script>
+    <script src="homeSketch.js"></script>
     <title>Tommy Vanini - Art Works</title>
 </head>
 <body>
     <div class="center">
-        <h1>Take a look at my works</h1>
-        <a href="pages/fourierSquareWave.html">Fourier Square Wave</a><br>
-        <a href="pages/fourierSawtoothWave.html">Fourier Sawtooth Wave</a><br>
-        <a href="pages/fourierTriangleWave.html">Fourier Triangle Wave</a><br>
-        <a href="pages/epicycles.html">Epicycles</a><br>
-        <a href="pages/userDraws.html">You draw!</a>
+        <h1 style="line-height: 150%">Take a look at my work<br>on Fourier Series</h1>
+        <div class="round-border">
+            <div class="links" id="link">
+                <a class="first" href="pages/fourierSquareWave.html">Fourier Square Wave</a><br>
+                <a class="first" href="pages/fourierSawtoothWave.html">Fourier Sawtooth Wave</a><br>
+                <a class="first" href="pages/fourierTriangleWave.html">Fourier Triangle Wave</a><br>
+                <a class="first" href="pages/epicycles.html">Epicycles</a><br>
+                <a class="first" href="pages/userDraws.html">You draw!</a>
+            </div>
+        </div>
+        <div id="time"></div>
     </div>
-
 </body>
 
 </html>
