@@ -8,7 +8,14 @@
     <script src="../p5libraries/p5.dom.js"></script>
 </head>
 <body>
-    <a href="../index.html" class="back">Back</a>
+    <a href="../index.html" class="back">
+        <div id="wrapper-back">Back</div>
+    </a>
+    <script type="text/javascript">
+        let windowHeight = window.innerHeight;
+        let wrBack = document.getElementsByClassName("back")[0];
+        wrBack.setAttribute("style", "line-height: " + windowHeight + "px");
+    </script>
     <div class="center">
         <h1>The Sawtooth Wave</h1>
         <div class="content-description"><span>Uses the following formula<br></span><img src="https://latex.codecogs.com/gif.latex?\sum_{k=1}^{N}\frac{sin(k\theta)}{k\cdot(-1)^{k}}"><br>to calculate the radius and the period of each circle</div>

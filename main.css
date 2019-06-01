@@ -1,3 +1,10 @@
+:root{
+    --link-col: rgb(218, 0, 0);
+    --link-hover-col: red;
+    --h1-col: rgb(233, 159, 11);
+}
+
+
 .center{
     text-align: center;
     display: grid;
@@ -11,7 +18,7 @@ body{
 
 a:link, a:visited, a{
     text-decoration: none;
-    color: rgb(218, 0, 0);
+    color: var(--link-col);
     font-size: 1em;
     line-height: 200%;
 }
@@ -19,20 +26,43 @@ a:link, a:visited, a{
 div.links>a:hover, a.back:hover{
     font-size: 2em;
     font-weight: bold;
-    color: red
+    color: var(--link-hover-col);
 }
 
 a.back{
+    /* position: absolute; */
+    /* bottom: 50%; */
+    grid-row: 2/3;
+    transition: font-size .5s cubic-bezier(.55, .96, .6, 1.23);
+}
+
+#wrapper-back{
     position: fixed;
-    bottom: 50%;
+    /* height: 100%; */
+    width: fit-content;
+    left: -1px;
+    top: 4px;
+    bottom: 4px;
+    right: auto;
+    display: grid;
+    grid-template-rows: auto;
+    padding-left: 4px;
+    padding-right: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#wrapper-back:hover{
+    background-color: rgb(237, 237, 237);
+    border: 1px solid rgba(215, 215, 215, 0.2);
 }
 
 a.back:hover{
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .round-border{
-    border: 5px dashed rgb(218, 0, 0);
+    border: 5px dashed var(--link-col);
     border-radius: 10px;
     width: 800px;
     padding: 20px;
@@ -41,10 +71,6 @@ a.back:hover{
     grid-template-columns: 1fr auto 1fr;
     grid-column: 2/3;
 }
-
-/* .first{
-    grid-column: 2/3;
-} */
 
 .links{
     grid-column: 2/3;
@@ -56,6 +82,12 @@ a.back:hover{
 
 h1{
     grid-column: 2/3;
+    transition: transform .5s cubic-bezier(.55, .96, .6, 1.23);
+    color: var(--h1-col);
+}
+
+h1:hover, h1:focus {
+    transform: scale(1.1);
 }
 
 #canvas-wrapper {
@@ -89,3 +121,4 @@ h1{
     grid-column: 2/4;
     grid-row-start: 3;
 }
+

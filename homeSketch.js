@@ -2,8 +2,7 @@ let links = [];
 let container;
 let textSize = 20;
 let bd;
-let data;
-let disp;
+let data, day, hour;
 let p;
 
 function setup() {
@@ -18,8 +17,9 @@ function setup() {
     }
     
     data = new Date();
-    disp = data.toDateString();
-    p = createP(disp.slice(disp.indexOf(" "), disp.length)).parent("time");
+    day = data.toDateString();
+    hour = data.toTimeString();
+    p = createP(hour.slice(0, hour.indexOf(" "))+" - "+day.slice(day.indexOf(" "), day.length)).parent("time");
 }
 
 function removePadding(){

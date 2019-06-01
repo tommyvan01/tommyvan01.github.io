@@ -63,7 +63,7 @@ function draw() {
     }
     endShape();
 
-    time += 0.03;
+    time += 0.02;
     if (time > TWO_PI){
         time = 0;
     }

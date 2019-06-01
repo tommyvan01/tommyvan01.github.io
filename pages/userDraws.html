@@ -8,7 +8,14 @@
     <script src="../p5libraries/p5.dom.js"></script>
 </head>
 <body>
-    <a href="../index.html" class="back">Back</a>
+    <a href="../index.html" class="back">
+        <div id="wrapper-back">Back</div>
+    </a>
+    <script type="text/javascript">
+        let windowHeight = window.innerHeight;
+        let wrBack = document.getElementsByClassName("back")[0];
+        wrBack.setAttribute("style", "line-height: " + windowHeight + "px");
+    </script>
     <div class="center">
         <h1>Draw what you want and let <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Definition">DFT</a> do the work</h1>
         <div class="content-description">Use the mouse to draw, press enter to see the result.<br>If you want to draw something else, press canc and retry.</div>

@@ -8,7 +8,14 @@
     <script src="../p5libraries/p5.dom.js"></script>
 </head>
 <body>
-    <a href="../index.html" class="back">Back</a>
+    <a href="../index.html" class="back">
+        <div id="wrapper-back">Back</div>
+    </a>
+    <script type="text/javascript">
+        let windowHeight = window.innerHeight;
+        let wrBack = document.getElementsByClassName("back")[0];
+        wrBack.setAttribute("style", "line-height: " + windowHeight + "px");
+    </script>
     <div class="center">
         <h1>Drawing Epicycles</h1>
         <script src="../js/FourierTransformEpicycles/sketch.js"></script>
