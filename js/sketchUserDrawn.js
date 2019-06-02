@@ -74,8 +74,18 @@ function draw() {
     background(255);
     if (state == 0) {
         if(down == 0){
-            let point = createVector(mouseX - width/2, mouseY - height/2);
-            drawing.push(point);
+            let add = false;
+            if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= width) { //if I'm inside the canvas always add a point
+                add = true;
+            } else { // otherwise...
+                if (drawing.length > 0) { //add only if there's already a least a point in the drawing array
+                    add = true;
+                }
+            }
+            if(add){
+                let point = createVector(mouseX - width / 2, mouseY - height / 2);
+                drawing.push(point);
+            }
         }
         noFill();
         strokeWeight(1);

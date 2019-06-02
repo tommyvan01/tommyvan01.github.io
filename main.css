@@ -2,13 +2,15 @@
     --link-col: rgb(218, 0, 0);
     --link-hover-col: red;
     --h1-col: rgb(233, 159, 11);
+    --ttf: cubic-bezier(.55, .96, .6, 1.23);
 }
 
 
-.center{
+.center, .time-container {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: repeat(3, auto) auto [last];
 }
 
 body{
@@ -21,6 +23,7 @@ a:link, a:visited, a{
     color: var(--link-col);
     font-size: 1em;
     line-height: 200%;
+    transition: font-size .5s ease;
 }
 
 div.links>a:hover, a.back:hover{
@@ -33,7 +36,7 @@ a.back{
     /* position: absolute; */
     /* bottom: 50%; */
     grid-row: 2/3;
-    transition: font-size .5s cubic-bezier(.55, .96, .6, 1.23);
+    transition: font-size .5s var(--ttf);
 }
 
 #wrapper-back{
@@ -82,7 +85,7 @@ a.back:hover{
 
 h1{
     grid-column: 2/3;
-    transition: transform .5s cubic-bezier(.55, .96, .6, 1.23);
+    transition: transform .5s var(--ttf);
     color: var(--h1-col);
 }
 
@@ -95,7 +98,7 @@ h1:hover, h1:focus {
 }
 
 #canvas-wrapper canvas{
-    border: 2px double black;
+    border: 2px solid black;
 }
 
 #slider-wrapper {
@@ -115,10 +118,19 @@ h1:hover, h1:focus {
     margin: 15px auto 15px auto;
 }
 
+#formula{
+    display: auto;
+    /* position: fixed; */
+    /* left: 50%; */
+    /* right: 50%; */
+    grid-column: 2/3;
+    margin-top: 20px;
+}
+
 #time{
     text-align: right;
     margin-right: 20px;
     grid-column: 2/4;
-    grid-row-start: 3;
+    /* grid-row-end: last; */
 }
 

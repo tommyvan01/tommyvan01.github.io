@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../main.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../images/icona.png">
     <title>TV - Square Wave</title>
     <script src="../p5libraries/p5.js"></script>
     <script src="../p5libraries/p5.dom.js"></script>
+    <script src="../js/sketchFourierSquareWave.js"></script>
+    <link href="../main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <a href="../index.html" class="back">
         <div id="wrapper-back">Back</div>
     </a>
     <script type="text/javascript">
+    // sets the line height of the back section to the window height to allow the user to click on any part of the section
         let windowHeight = window.innerHeight;
         let wrBack = document.getElementsByClassName("back")[0];
         wrBack.setAttribute("style", "line-height: "+windowHeight+"px");
     </script>
     <div class="center">
         <h1>The Square Wave</h1>
-        <div class="content-description"><span>Uses the following formula<br></span><img src="https://latex.codecogs.com/gif.latex?\sum_{k=0}^{N}\frac{sin((2k&plus;1)\cdot&space;\theta)}{(-1)^{2k&plus;1}(2k&plus;1)}"><br>to calculate the radius and the period of each circle</div>
-        <script src="../js/FourierSeriesSquareWave/sketch.js"></script>
+        <div class="content-description"><span>Uses the following formula<br></span><img src="https://latex.codecogs.com/svg.latex?\sum_{k=0}^{N}\frac{\sin((2k&plus;1)\cdot\theta)}{2k&plus;1}"><br>to calculate the radius and the period of each circle</div>
         <div id="slider-wrapper"></div>
         <div id="canvas-wrapper"></div>
     </div>

@@ -59,7 +59,7 @@ function draw() {
     }
     endShape();
 
-    time += 0.04;
+    time -= 0.04;
     
     if(wave.length > 1000){
         wave.pop();

@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <link href="main.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/icona.png">
     <script src="p5libraries/p5.js"></script>
     <script src="p5libraries/p5.dom.js"></script>
-    <script src="homeSketch.js"></script>
-    <title>Tommy Vanini - Works</title>
+    <script src="js/homeSketch.js"></script>
+    <title>TV - Fourier Works</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="center">
@@ -21,6 +21,14 @@
                 <a class="first" href="pages/userDraws.html">You draw!</a>
             </div>
         </div>
+        <div id="formula">
+            <div>
+                <img src="https://latex.codecogs.com/svg.latex?s_{N}(x)=\frac{a_0}{2}+\sum_{n=1}^{N}\left (a_n\cos\left ( \frac{2\pi nx}{P} \right ) + b_n\sin\left (\frac{2\pi nx}{P} \right )\right )"
+                    alt="The formula discovered by Fourier">
+            </div>
+        </div>
+    </div>
+    <div class="time-container">
         <div id="time"></div>
     </div>
 </body>

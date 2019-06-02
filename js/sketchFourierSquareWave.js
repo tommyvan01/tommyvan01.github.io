@@ -57,10 +57,10 @@ function draw() {
     }
     endShape();
 
-    time += 0.04;
+    time -= 0.04;
     
     // rimuovo l'ultimo punto della lista per ottimizzazione di memoria
-    if(wave.length > 500){
+    if(wave.length > 1000){
         wave.pop();
     }
 }
