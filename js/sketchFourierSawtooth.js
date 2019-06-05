@@ -1,19 +1,17 @@
-let time = 0; // tempo
-let wave = []; // array che contiene i punti
+let time = 0;
+let wave = [];
 let maxWaves = 400;
-let slider; // slider per numero di onde
+let slider;
 
 function setup(){
     createCanvas(800, 400).parent("canvas-wrapper");
     frameRate(30);
-    // slider per numero di onde da aggiungere
-    slider = createSlider(1, maxWaves, 30); // min, max, start
+    slider = createSlider(1, maxWaves, 30);
     slider.parent("slider-wrapper");
 }
 
 function draw() {
     background(255);
-    // slider
     fill(0);
     textSize(20);
     text("Number of circles: " + slider.value() + " (max: " + maxWaves + ")", 5, 30);

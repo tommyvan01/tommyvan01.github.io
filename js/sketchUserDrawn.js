@@ -13,15 +13,15 @@ function setup(){
 }
 
 function mousePressed(){
-    down = 0; // mouse is down
+    down = 0; // user sta disegnando
 }
 
 function mouseReleased(){
-    down = 1;
+    down = 1; // user non disegna più
 }
 
 function keyPressed(){
-    if(keyCode == ENTER && state != 1){
+    if(keyCode == ENTER && state != 1){ // se user preme ENTER 
         state = 1;
         for (let i = 0; i < drawing.length; i++) {
             x.push(drawing[i].x);
@@ -34,16 +34,16 @@ function keyPressed(){
         fourierX.sort((a, b) => b.amp - a.amp);
     }
     if (keyCode == DELETE){
-        if (state == 1) {
-            path = [];
+        if (state == 1) { // se gli epicicli disegnano
+            path = []; // resetta tutto
             time = 0;
             x = [];
             y = [];
             drawing = [];
-            state = 0; // I'm drawing
+            state = 0; // input da user
         }
-        else if (state == 0){
-            drawing = [];
+        else if (state == 0){ // se gli epicicli non disegnano
+            drawing = []; // cancella i punti immessi dall'utente salvati
         }
     }
 }
@@ -58,10 +58,10 @@ function epicycles(x, y, rotation, fourier){
 
         noFill();
         stroke(0, 50);
+        strokeWeight(1);
         ellipse(x, y, radius * 2); // cerchio
         x += radius * cos(freq * time + phase + rotation);
         y += radius * sin(freq * time + phase + rotation);
-        strokeWeight(1);
         stroke(0);
         line(px, py, x, y); // linea tra i cerchi
         px = x;
@@ -72,31 +72,31 @@ function epicycles(x, y, rotation, fourier){
 
 function draw() {
     background(255);
-    if (state == 0) {
-        if(down == 0){
+    if (state == 0) { // se lo user può disegnare
+        if(down == 0){ // se sta disegnando
             let add = false;
-            if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= width) { //if I'm inside the canvas always add a point
+            if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= width) { // se sono dentro il canvas aggiungi sempre il punto
                 add = true;
-            } else { // otherwise...
-                if (drawing.length > 0) { //add only if there's already a least a point in the drawing array
+            } else {
+                if (drawing.length > 0) { // aggiungi il punto solo se c'è già almento un punto nell'array drawing
                     add = true;
                 }
             }
             if(add){
-                let point = createVector(mouseX - width / 2, mouseY - height / 2);
-                drawing.push(point);
+                drawing.push(createVector(mouseX - width / 2, mouseY - height / 2));
             }
         }
         noFill();
         strokeWeight(1);
         stroke(0);
+        translate(width/2, height/2),
         beginShape();
         for (let v of drawing) {
-            vertex(v.x + width/2, v.y + height/2);
+            vertex(v.x, v.y);
         }
         endShape();
     }
-    else if (state == 1){
+    else if (state == 1){ // se gli epicicli stanno disegnando
         let vx = epicycles(width / 2, 50, 0, fourierX);
         let vy = epicycles(100, height / 2, HALF_PI, fourierY);
         let v = createVector(vx.x, vy.y);

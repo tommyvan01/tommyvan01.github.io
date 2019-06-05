@@ -1,13 +1,12 @@
-let time = 0; // tempo
-let wave = []; // array che contiene i punti
+let time = 0;
+let wave = [];
 let maxWaves = 400;
-let slider; // slider per numero di onde
+let slider;
 
 function setup(){
     createCanvas(800, 400).parent("canvas-wrapper");
     frameRate(30);
-    // slider per numero di onde da aggiungere
-    slider = createSlider(1, maxWaves, 30); // min, max, start
+    slider = createSlider(1, maxWaves, 30);
     slider.parent("slider-wrapper");
 }
 
@@ -44,16 +43,14 @@ function draw() {
         px = x;
         py = y;
     }
-    wave.unshift(y); //aggiungo all'inizio della lista wave
+    wave.unshift(y);
     fill(0, 255, 0);
-    ellipse(x, y, 8); // ultimo punto
+    ellipse(x, y, 8);
     
-    // riga tra l'ultimo punto della lista wave e il punto rotante
     translate(200, 0);
     stroke(255, 0, 0);
     line(x - 200, y, 0, wave[0]);
     
-    // disegno l'onda risultante
     noFill();
     stroke(0);
     strokeWeight(2);
@@ -63,13 +60,9 @@ function draw() {
     }
     endShape();
 
-    time += 0.02;
-    if (time > TWO_PI){
-        time = 0;
-    }
+    time -= 0.02;
     
-    // rimuovo l'ultimo punto della lista per ottimizzazione di memoria
-    if(wave.length > 500){
+    if(wave.length > 1000){
         wave.pop();
     }
 }

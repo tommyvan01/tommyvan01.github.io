@@ -1,30 +1,28 @@
 let time = 0; // tempo
 let wave = []; // array che contiene i punti
-let maxWaves = 400;
+let maxWaves = 400; // numero massimo di onde da poter aggiungere
 let slider; // slider per numero di onde
 
 function setup(){
-    createCanvas(800, 400).parent("canvas-wrapper");
-    frameRate(30);
-    // slider per numero di onde da aggiungere
-    slider = createSlider(1, maxWaves, 30); // min, max, start
-    slider.parent("slider-wrapper");
+    createCanvas(800, 400).parent("canvas-wrapper"); // creo un canvas e gli assegno #canvas-wrapper come padre per posizionarlo nella pagina
+    frameRate(30); // framerate medio per non dare troppi calcoli al processore
+    slider = createSlider(1, maxWaves, 30).parent("slider-wrapper"); // (min, max, start) e assegno #slider-wrapper come padre per posizionarlo nella pagina
 }
 
 function draw() {
-    background(255);
+    background(255); // sfondo
     // slider
     fill(0);
     textSize(20);
     strokeWeight(1);
-    text("Number of circles: " + slider.value() + " (max: " + maxWaves + ")", 5, 30);
-    translate(200, 200);
+    text("Number of circles: " + slider.value() + " (max: " + maxWaves + ")", 5, 30); // stampo il numero di cerchi che sto aggiungendo accedendo al valore di slider con .value()
 
+    translate(200, 200);
     let radius = 100;
     let x = 0;
     let y = 0;
-    let px = 0;
-    let py = 0;
+    let px = 0; // x del punto precedente
+    let py = 0; // y del punto precedente
     
     for (let k = 0; k < slider.value(); k++){
         let n = 2 * k + 1;
@@ -34,15 +32,15 @@ function draw() {
         x += radius / (n) * cos(n * time);
         y += radius / (n) * sin(n * time);
         stroke(0);
-        line(px, py, x, y); // linea tra i cerchi
+        line(px, py, x, y); // linea tra un cerchio e quello precedente più grande
         px = x;
         py = y;
     }
-    wave.unshift(y); //aggiungo all'inizio della lista wave
+    wave.unshift(y); // aggiungo il punto all'inizio della lista dei punti
     fill(0, 255, 0);
-    ellipse(x, y, 8); // ultimo punto
+    ellipse(x, y, 8); // disegno l'ultimo punto
     
-    // riga tra l'ultimo punto della lista wave e il punto rotante
+    // linea tra l'ultimo punto della lista wave e il punto rotante
     translate(200, 0);
     stroke(255, 0, 0);
     line(x - 200, y, 0, wave[0]);
@@ -52,7 +50,7 @@ function draw() {
     stroke(0);
     strokeWeight(2);
     beginShape();
-    for (let i=0; i<wave.length; i++){
+    for (let i = 0; i < wave.length; i++){
         vertex(i, wave[i]);
     }
     endShape();
